@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.7%;
+  }
+}
+body {
+  font-family: sans-serif;
+  background: url(./bg4.png) center center/cover no-repeat fixed;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 0 3rem;
+  display: flex;
+  gap: 4rem;
+  margin-top: 8rem;
+}
+.box__1 {
+  width: 30%;
+  height: 85vh;
+  overflow: auto;
+}
+.box__2 {
+  width: 70%;
+  padding-top: 2rem;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sura__info {
+  font-size: 1.8rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(173, 172, 172, 0.536);
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sura__info:hover {
+  background-color: #343434f0;
+  color: #fff;
+  cursor: pointer;
+}
+.name {
+  font-weight: 600;
+}
+.suralar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (max-width: 1200px) {
+  .row {
+    gap: 1rem;
+  }
+  .sura__info {
+    padding: 1rem;
+  }
+  .suralar {
+    gap: 1.5rem;
+  }
+}
+.sura__num {
+  width: 6rem;
+  height: 5rem;
+  border-radius: 50%;
+  box-shadow: 0 0.4rem 0.8rem rgba(173, 172, 172, 0.335);
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .sura__num {
+    width: 6rem;
+    height: 5rem;
+  }
+}
+.num_1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+.text__oyat {
+  font-size: 1.8rem;
+  margin: 0.6rem 0;
+  line-height: 1.4;
+}
+.text__box {
+  margin-bottom: 3rem;
+  width: 100%;
+  height: 15vh;
+  overflow: auto;
+  background-color: #f0f0f0;
+  padding-left: 1rem;
+}
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.menu__bar {
+  width: 3rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 10rem;
+  display: none;
+  opacity: 0;
+}
+.line {
+  width: 100%;
+  height: 0.3rem;
+  background-color: #000;
+  border-radius: 0.2rem;
+  margin: 0.4rem 0;
+}
+@media (max-width: 700px) {
+  .box__2 {
+    opacity: 0;
+    display: none;
+    width: 100%;
+    padding-left: 4rem;
+  }
+  .container {
+    gap: 2rem;
+    padding-left: 1.5rem;
+  }
+  .box__1 {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+/* player */
+.player {
+  background: linear-gradient(to right, #000, #434343);
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  z-index: 1;
+}
+.player .ayah {
+  padding: 10px 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
+.player audio {
+  width: 100%;
+  height: 40px;
+  margin: 15px 0;
+}
+.player .buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.buttons .icon {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #23162f;
+  font-size: 20px;
+  cursor: pointer;
+}
+.surahs > div {
+  color: #23162f;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  width: calc(100% - 90px);
+  transition: 0.3s color ease;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  position: relative;
+  font-size: 20px;
+  counter-increment: surah-counter;
+}
+.surahs > div::after {
+  content: counter(surah-counter);
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: -90px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 25px;
+  line-height: 80px;
+  text-align: center;
+  background-color: inherit;
+  transition: inherit;
+  box-shadow: inherit;
+}
+.surahs > div::before {
+  content: "";
+  position: absolute;
+  border: 7px solid transparent;
+  border-right-color: #23162f;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -14px;
+}
+.surahs > div:hover,
+.surahs > div:hover::after {
+  background: linear-gradient(to bottom, #000, #434343);
+  color: #fff;
+}
+/** editiom From Vs Code **/
+@media (max-width: 400px) {
+  .surahs > div {
+    font-size: 17px;
+    padding: 5px 10px;
+    width: calc(100% - 70px);
+  }
+  .surahs > div::after {
+    width: 60px;
+    height: 60px;
+    font-size: 19px;
+    line-height: 60px;
+    left: -70px;
+  }
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 8rem;
+  z-index: 10;
+}
+.header__box {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+.menu {
+  display: flex;
+  font-size: 1.8rem;
+  gap: 3rem;
+}
+.menu a {
+  text-decoration: none;
+  color: #000;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2.2rem;
+}

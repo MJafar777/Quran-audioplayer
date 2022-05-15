@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quran Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__box">
+        <div class="logo">
+          <img src="./quran_book_img.jpg" alt="quran book img" />
+          <p class="logo__name">Quran Audioplayer</p>
+        </div>
+        <div class="menu"></div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="box__1">
+        <div class="suralar"></div>
+      </div>
+      <div class="menu__bar">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="box__2">
+        <h2 class="title">Uzbek Text</h2>
+        <div class="arabic__text text__box"></div>
+        <h2 class="title">English Text</h2>
+        <div class="english__text text__box"></div>
+        <div class="player">
+          <div class="ayah"></div>
+          <audio src="" class="quranPlayer" controls autoplay></audio>
+          <div class="buttons">
+            <div class="icon prev"><i class="fas fa-backward"></i></div>
+            <div class="icon play"><i class="fas fa-play"></i></div>
+            <div class="icon next"><i class="fas fa-forward"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
